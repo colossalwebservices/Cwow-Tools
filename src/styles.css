@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, sans-serif;
+  color: #17202e;
+  background: #f5f7fa;
+  font-synthesis: none;
+}
+body { margin: 0; }
+main { min-height: 100svh; display: grid; place-items: center; padding: 24px; }
+section { width: 100%; max-width: 680px; padding: clamp(24px, 5vw, 56px); background: #ffffff; border: 1px solid #e1e6ed; border-radius: 20px; box-shadow: 0 16px 48px #17202e08; }
+.status { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #18704a; }
+.status span { width: 8px; height: 8px; background: #239963; border-radius: 50%; }
+h1 { margin: 24px 0 16px; font-size: clamp(30px, 5vw, 44px); font-weight: 700; line-height: 1.15; letter-spacing: -0.035em; }
+p { color: #586575; line-height: 1.7; margin: 0; }
+.details { margin: 32px 0; padding: 24px; border-radius: 12px; background: #f5f7fa; }
+h2 { font-size: 16px; font-weight: 600; margin: 0 0 8px; }
+.hint { font-size: 13px; }
+code { overflow-wrap: anywhere; font-family: ui-monospace, monospace; color: #17202e; }
