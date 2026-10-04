@@ -1,0 +1,22 @@
+services:
+  web:
+    image: oven/bun:1.3.14
+    working_dir: /app
+    restart: on-failure
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - web_dependencies:/app/node_modules
+    environment:
+      __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS:
+      CHOKIDAR_USEPOLLING: "true"
+    command: ["sh", "-ec", "bun install --frozen-lockfile && exec bun run dev --host 0.0.0.0 --port 3000"]
+    healthcheck:
+      test: ["CMD", "bun", "-e", "fetch('http://127.0.0.1:3000/').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      start_period: 120s
+      retries: 3
+volumes:
+  web_dependencies:

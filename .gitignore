@@ -1,0 +1,9 @@
+node_modules/
+.output/
+.tanstack/
+.vite/
+dist/
+.env
+.env.local
+src/routeTree.gen.ts
+src/tailwind.config.vibe.json
